@@ -11,6 +11,6 @@ class ProductRepositoryImpl (
 ): ProductRepository {
 
     override suspend fun getUsersTest(): List<Product> =
-        service.getTest().map { converter.convert(it) }
+        service.getTest().products.map { converter.convert(it) }
 
 }
