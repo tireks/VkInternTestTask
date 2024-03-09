@@ -7,7 +7,6 @@ import kotlinx.coroutines.withContext
 
 class ProductRepositoryImpl (
     private val service: ProductAPI,
-    private val dispatcher: CoroutineDispatcher,
     private val converter: ProductConverter
 ): ProductRepository {
 
