@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.tirexmurina.vkinterntask.R
 import com.tirexmurina.vkinterntask.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun inflateViewBinding(
