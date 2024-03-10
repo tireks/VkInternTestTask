@@ -10,7 +10,7 @@ class ProductRepositoryImpl (
     private val converter: ProductConverter
 ): ProductRepository {
 
-    override suspend fun getUsersTest(): List<Product> =
-        service.getTest().products.map { converter.convert(it) }
+    override suspend fun getProducts(parameters: Map<String, String>): List<Product> =
+        service.getProducts(parameters).products.map { converter.convert(it) }
 
 }
