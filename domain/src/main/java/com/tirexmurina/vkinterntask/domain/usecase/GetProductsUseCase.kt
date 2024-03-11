@@ -5,15 +5,15 @@ import com.tirexmurina.vkinterntask.domain.repository.ProductRepository
 
 interface IGetProductsUseCase{
 
-    suspend operator fun invoke() : List<Product>
+    suspend operator fun invoke(parameters : Map<String, String>) : List<Product>
 
 }
 
 class GetProductsUseCase(
     private val repository: ProductRepository
 ) : IGetProductsUseCase{
-    override suspend fun invoke(): List<Product> {
-        return repository.getUsersTest()
+    override suspend fun invoke(parameters : Map<String, String>): List<Product> {
+        return repository.getProducts(parameters)
     }
 
 }
