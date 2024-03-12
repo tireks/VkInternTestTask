@@ -1,4 +1,4 @@
-package com.tirexmurina.vkinterntask.data.remote
+package com.tirexmurina.vkinterntask.data.remote.product
 
 
 
