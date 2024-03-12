@@ -80,6 +80,12 @@ class HomeMainAdapter(
         }
     }
 
+    fun refreshData(){
+        products = arrayListOf()
+        notifyDataSetChanged()
+
+    }
+
 
     fun addLoadingView(){
         loadingStatus = true
