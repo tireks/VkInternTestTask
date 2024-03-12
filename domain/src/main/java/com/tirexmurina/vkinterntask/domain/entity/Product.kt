@@ -12,7 +12,3 @@ data class Product(
     val price : String,
     val discountPercentage : String
 )
-
-/*data class ProductImage (
-    val picture : String
-)*/

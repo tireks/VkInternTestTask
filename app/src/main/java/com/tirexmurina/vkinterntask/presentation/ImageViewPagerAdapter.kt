@@ -13,6 +13,7 @@ class ImageViewPagerAdapter() : RecyclerView.Adapter<ImageViewHolder>() {
         set(value){
             field = value
             notifyDataSetChanged()
+            // знаю что все надо было на DiffUtil сделать, не успел
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {

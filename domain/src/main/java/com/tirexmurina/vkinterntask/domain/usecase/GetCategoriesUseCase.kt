@@ -1,9 +1,7 @@
 package com.tirexmurina.vkinterntask.domain.usecase
 
 import com.tirexmurina.vkinterntask.domain.entity.Category
-import com.tirexmurina.vkinterntask.domain.entity.Product
 import com.tirexmurina.vkinterntask.domain.repository.CategoryRepository
-import com.tirexmurina.vkinterntask.domain.repository.ProductRepository
 
 interface IGetCategoriesUseCase {
 

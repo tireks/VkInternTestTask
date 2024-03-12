@@ -1,7 +1,6 @@
 package com.tirexmurina.vkinterntask.screen
 
 import android.graphics.Paint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.tirexmurina.vkinterntask.R
 import com.tirexmurina.vkinterntask.databinding.ItemCatalogMainBinding
 import com.tirexmurina.vkinterntask.databinding.ItemLoadingBinding
@@ -69,7 +68,7 @@ class HomeMainAdapter(
             if (products.isEmpty()) {
                 products.clear()
                 products.addAll(newItems)
-                notifyDataSetChanged()
+                notifyDataSetChanged() // знаю что все надо было на DiffUtil сделать, не успел
             } else {
                 val changedPosition = products.indexOf(null)
                 products.clear()
@@ -83,6 +82,7 @@ class HomeMainAdapter(
     fun refreshData(){
         products = arrayListOf()
         notifyDataSetChanged()
+        // знаю что все надо было на DiffUtil сделать, не успел
 
     }
 

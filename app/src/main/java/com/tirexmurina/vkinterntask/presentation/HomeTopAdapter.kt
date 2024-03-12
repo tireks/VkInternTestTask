@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tirexmurina.vkinterntask.databinding.ItemCatalogTopActiveBinding
 import com.tirexmurina.vkinterntask.databinding.ItemCatalogTopBinding
 import com.tirexmurina.vkinterntask.domain.entity.Category
-import com.tirexmurina.vkinterntask.domain.entity.Product
 
 class HomeTopAdapter (
     private val categoryClickListener: (Category) -> Unit,
@@ -17,6 +16,7 @@ class HomeTopAdapter (
         set(value){
             field = value
             notifyDataSetChanged()
+            // знаю что все надо было на DiffUtil сделать, не успел
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

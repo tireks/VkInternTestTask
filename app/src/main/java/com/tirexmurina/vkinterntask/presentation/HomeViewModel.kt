@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tirexmurina.vkinterntask.domain.entity.Category
-import com.tirexmurina.vkinterntask.domain.usecase.GetProductsUseCase
 import com.tirexmurina.vkinterntask.domain.usecase.IGetCategoriesUseCase
 import com.tirexmurina.vkinterntask.domain.usecase.IGetProductsByCategoryUseCase
 import com.tirexmurina.vkinterntask.domain.usecase.IGetProductsUseCase
