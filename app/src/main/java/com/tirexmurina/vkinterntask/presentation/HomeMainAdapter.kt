@@ -1,9 +1,11 @@
 package com.tirexmurina.vkinterntask.presentation
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.tirexmurina.vkinterntask.R
 import com.tirexmurina.vkinterntask.databinding.ItemCatalogMainBinding
@@ -14,26 +16,6 @@ class HomeMainAdapter(
     private val productClickListener: (Product) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    /*var products: List<Product> = emptyList()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeMainViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemCatalogMainBinding.inflate(inflater, parent, false)
-        return  HomeMainViewHolder(binding)
-    }
-
-    override fun getItemCount(): Int {
-        return products.size
-    }
-
-    override fun onBindViewHolder(holder: HomeMainViewHolder, position: Int) {
-        holder.bind(products[position], productClickListener)
-    }
-*/
     private var products: ArrayList<Product?> = arrayListOf()
     private var loadingStatus = false
 
@@ -135,7 +117,7 @@ class ItemLastViewHolder(
 class ItemReadyViewHolder(
     private val binding: ItemCatalogMainBinding
 ): RecyclerView.ViewHolder(binding.root){
-    var resources = itemView.context.resources
+    private var resources = itemView.context.resources
     fun bind(
         product: Product?,
         productClickListener: (Product) -> Unit
@@ -143,40 +125,22 @@ class ItemReadyViewHolder(
         if (product != null){
             with(binding){
                 itemTitle.text = product.title
-                itemDescription.text= product.description
-                Glide.with(itemImage.context)
-                    .load(product.thumbnail)
-                    .placeholder(R.drawable.ic_recycler_view_placeholder)
-                    .error(R.drawable.ic_recycler_view_placeholder)
-                    .into(itemImage)
+                itemDescription.text = product.description
+                itemPriceNew.text = String.format(resources.getString(R.string.pricing_template_string), product.price)
+                val oldPrice = (product.price.toInt()*(100+product.discountPercentage.toFloat())/100).toInt().toString()
+                itemPriceOld.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                itemPriceOld.text = String.format(resources.getString(R.string.pricing_template_string), oldPrice)
+                populateViewPager(product.images)
             }
             itemView.setOnClickListener{ productClickListener(product)}
         }
     }
-}
-/*
-class HomeMainViewHolder(
-    private val binding: ItemCatalogMainBinding
-) : RecyclerView.ViewHolder(binding.root)  {
 
-
-    var resources = itemView.context.resources
-    fun bind(
-        product: Product,
-        productClickListener: (Product) -> Unit
-    ) {
-        with(binding){
-            itemTitle.text = product.title.toString()
-            itemDescription.text= product.description.toString()
-            Glide.with(itemImage.context)
-                .load(product.thumbnail)
-                .placeholder(R.drawable.ic_recycler_view_placeholder)
-                .error(R.drawable.ic_recycler_view_placeholder)
-                .into(itemImage)
-        }
-        itemView.setOnClickListener{ productClickListener(product)}
+    private fun populateViewPager(images: List<String>) {
+        val adapter = ImageViewPagerAdapter()
+        binding.itemImageViewpager.adapter = adapter
+        binding.itemImageViewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        (binding.itemImageViewpager.adapter as? ImageViewPagerAdapter)?.pics =  images
+        binding.indicator.attachToPager(binding.itemImageViewpager)
     }
-
-
 }
-*/

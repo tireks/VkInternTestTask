@@ -8,8 +8,8 @@
     <ImageView
         android:id="@+id/sliderItem"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="match_parent"
         android:src="@drawable/thumbnail"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         />
 </androidx.cardview.widget.CardView>
