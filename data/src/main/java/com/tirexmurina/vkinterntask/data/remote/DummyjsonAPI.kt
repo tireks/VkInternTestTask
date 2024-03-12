@@ -1,7 +1,6 @@
 package com.tirexmurina.vkinterntask.data.remote
 
 import com.tirexmurina.vkinterntask.data.remote.category.CategoryModel
-import com.tirexmurina.vkinterntask.data.remote.category.CategoryResponse
 import com.tirexmurina.vkinterntask.data.remote.product.ProductModel
 import com.tirexmurina.vkinterntask.data.remote.product.ProductsResponse
 import retrofit2.http.GET
@@ -27,8 +26,6 @@ interface DummyjsonAPI {
 
     @GET("products/categories")
     suspend fun getCategories() : List<CategoryModel>
-    //здесь наверное стоило обернуть ответ в CatergoryResponse какой-нибудь,
-    // он у меня даже есть, мне не удалось заставить кастомный десериалайзер адекватно с ним работать.
 
 
 
