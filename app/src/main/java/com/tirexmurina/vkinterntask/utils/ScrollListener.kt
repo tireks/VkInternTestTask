@@ -1,20 +1,22 @@
 package com.tirexmurina.vkinterntask.utils
 
+import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.scopes.FragmentScoped
+import javax.inject.Inject
 
 interface OnLoadMoreListener {
     fun onLoadMore()
 }
 
-class RecyclerViewLoadMoreScroll(
-    layoutManager: GridLayoutManager
+class RecyclerViewLoadMoreScroll @Inject constructor(
 ) : RecyclerView.OnScrollListener() {
 
     private lateinit var onLoadMoreListener: OnLoadMoreListener
     private var isLoading: Boolean = false
-    private var layoutManager: RecyclerView.LayoutManager = layoutManager
 
     fun setLoaded() {
         isLoading = false
