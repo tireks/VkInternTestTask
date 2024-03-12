@@ -65,6 +65,8 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
+    implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.2.5"
+
     implementation project(path: ':domain')
     implementation project(path: ':data')
 }

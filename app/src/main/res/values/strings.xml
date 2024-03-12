@@ -6,4 +6,10 @@
     <string name="home_attention_snackbar_label">Sorry! There is no products left</string>
     <string name="home_attention_snackbar_action">Got It!</string>
     <string name="start_error">"Sorry! Error "</string>
+    <string name="details_description_label">Описание</string>
+    <string name="details_category_label">Категория</string>
+    <string name="details_hide_button_label">Скрыть</string>
+    <string name="details_stock">Осталось %s штук</string>
+    <string name="pricing_template_string">%s $</string>
+    <string name="discount_template_string">-%s %%</string>
 </resources>

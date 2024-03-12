@@ -142,8 +142,8 @@ class ItemReadyViewHolder(
     ) {
         if (product != null){
             with(binding){
-                itemTitle.text = product.title.toString()
-                itemDescription.text= product.description.toString()
+                itemTitle.text = product.title
+                itemDescription.text= product.description
                 Glide.with(itemImage.context)
                     .load(product.thumbnail)
                     .placeholder(R.drawable.ic_recycler_view_placeholder)

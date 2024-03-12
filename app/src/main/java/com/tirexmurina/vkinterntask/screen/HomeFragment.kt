@@ -18,6 +18,7 @@ import com.tirexmurina.vkinterntask.presentation.HomeViewModel
 import com.tirexmurina.vkinterntask.presentation.HomeViewState
 import com.tirexmurina.vkinterntask.utils.OnLoadMoreListener
 import com.tirexmurina.vkinterntask.utils.RecyclerViewLoadMoreScroll
+import com.tirexmurina.vkinterntask.utils.mainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -93,6 +94,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun showError(errorMsg: String) {
+        Log.d("AAA", errorMsg)
         with(binding) {
             progressBar.isVisible = false
             contentContainer.isVisible = false
@@ -120,7 +122,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun handleProductClick(product: Product) {
-
+        mainActivity.openDetails(product.id)
     }
 
 
