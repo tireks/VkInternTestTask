@@ -1,4 +1,4 @@
-package com.tirexmurina.vkinterntask.data.remote
+package com.tirexmurina.vkinterntask.data.remote.product
 
 import com.tirexmurina.vkinterntask.domain.entity.Product
 
@@ -9,7 +9,6 @@ class ProductConverter {
             Product(
                 id = id,
                 description = description,
-                thumbnail = thumbnail,
                 title = title,
                 brand = brand,
                 rating = rating,
