@@ -13,4 +13,8 @@ class ProductRepositoryImpl (
     override suspend fun getProducts(parameters: Map<String, String>): List<Product> =
         service.getProducts(parameters).products.map { converter.convert(it) }
 
+    override suspend fun getProductById(id: String): Product =
+        converter.convert(service.getProductById("products/$id"))
+
+
 }

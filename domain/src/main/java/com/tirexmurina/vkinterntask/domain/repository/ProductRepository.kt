@@ -6,4 +6,6 @@ interface ProductRepository {
 
     suspend fun getProducts(parameters : Map<String, String>) : List<Product>
 
+    suspend fun getProductById(id: String) : Product
+
 }
