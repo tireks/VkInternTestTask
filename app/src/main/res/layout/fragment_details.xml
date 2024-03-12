@@ -220,53 +220,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/scroll_description_label"
-                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/small_margin"
                     app:layout_constraintStart_toStartOf="parent"
                     >
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:id="@+id/scroll_vendor_view"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/scroll_vendor_space"
-                        android:background="@drawable/details_brand_button"
-                        android:clickable="true"
-                        android:focusable="true" />
 
-                    <ImageView
-                        android:id="@+id/scroll_vendor_right_pic"
-                        style="@style/details_brand_right_pic"
-                        app:layout_constraintTop_toTopOf="@id/scroll_vendor_view"
-                        app:layout_constraintEnd_toEndOf="@id/scroll_vendor_view"
-                        app:layout_constraintBottom_toBottomOf="@id/scroll_vendor_view"
-                        android:src="@drawable/ic_right_arrow"
-                        />
-                    <TextView
-                        android:id="@+id/scroll_vendor_text"
-                        app:layout_constraintTop_toTopOf="@id/scroll_vendor_view"
-                        app:layout_constraintBottom_toBottomOf="@id/scroll_vendor_view"
-                        app:layout_constraintStart_toStartOf="@id/scroll_vendor_view"
-                        app:layout_constraintEnd_toStartOf="@id/scroll_vendor_right_pic"
-                        tools:text = "APPLE"
-                        style="@style/details_brand_text_style" />
-
-                    <Space
-                        android:id="@+id/scroll_vendor_space"
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        app:layout_constraintTop_toBottomOf="@id/scroll_vendor_text"
-                        app:layout_constraintStart_toStartOf="@id/scroll_vendor_view"
-                        app:layout_constraintEnd_toEndOf="@id/scroll_vendor_view"
-                        />
 
                     <TextView
                         android:id="@+id/scroll_description_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/scroll_vendor_view"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginTop="8dp"
                         tools:text="An apple mobile which is nothing like apple"

@@ -35,7 +35,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.state.observe(viewLifecycleOwner, ::handleState)
-        loadData(args.id) //todo
+        loadData(args.id)
     }
 
     private fun loadData(id: String) {
@@ -66,7 +66,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             errorContent.isVisible = true
             errorText.text = errorMsg
             errorButton.setOnClickListener {
-                loadData(args.id) //todo
+                loadData(args.id)
             }
         }
     }
@@ -86,16 +86,11 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             val oldPrice = (item.price.toInt()*(100+item.discountPercentage.toFloat())/100).toInt().toString()
             scrollPriceOld.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             scrollPriceOld.text = String.format(resources.getString(R.string.pricing_template_string), oldPrice)
-            //todo перечеркнуть
             scrollDiscountLabelText.text = String.format(resources.getString(R.string.discount_template_string), item.discountPercentage)
-            scrollVendorText.text = item.brand
             scrollDescriptionText.text = item.description
             scrollHideDescriptionButton.text = "Скрыть"
             upNavButton.setOnClickListener {
                 Navigation.findNavController(it).popBackStack()
-            }
-            scrollVendorView.setOnClickListener {
-
             }
             scrollHideDescriptionButton.setOnClickListener {
                 if (descriptionLayout.isVisible){
@@ -116,8 +111,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         (binding.scrollItemViewpager.adapter as? ImageViewPagerAdapter)?.pics = images
         binding.indicator.attachToPager(binding.scrollItemViewpager)
     }
-
-    //todo разобраться с списком картинок(самб и картинки - отдельные категории. мб слить их в одну в конвертере? например в один лист)
 
 
 }
